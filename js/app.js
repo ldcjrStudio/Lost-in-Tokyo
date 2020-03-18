@@ -22,7 +22,7 @@ const Intro = () => (
 const NavItem = ({ className, href, children, logo }) => (
   <li className={`mh2-ns f6 f4-1 tc ${className}`}>
     <a className="white no-underline" href={href}>
-      {logo ? <img src="../images/logo.svg" /> : children}
+      {logo ? <img src="images/logo.svg" /> : children}
     </a>
   </li>
 );
@@ -84,7 +84,7 @@ class Attractions extends React.Component {
       >
         <div className="relative">
           <Overlay {...this.props} {...this.state} />
-          <img src={`../images/${image}`} className="db" />
+          <img src={`images/${image}`} className="db" />
         </div>
       </div>
     );
