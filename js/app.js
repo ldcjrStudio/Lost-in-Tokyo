@@ -37,7 +37,7 @@ const Nav = () => (
   </nav>
 );
 
-const Overlay = ({ showInfo, title, description }) => {
+const Overlay = ({ showInfo, title, description, link }) => {
   return (
     <div
       className="absolute w-100 h-100 flex items-center pa3 pa4-ns bg-aqua overlay"
@@ -46,6 +46,8 @@ const Overlay = ({ showInfo, title, description }) => {
       <div>
         <h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">
           {title}
+          <br></br>
+          {link}
         </h1>
         <p className="lh-title lh-copy-ns mv0 black f6 measure-l">
           {description}
@@ -79,7 +81,7 @@ class Attractions extends React.Component {
     return (
       <div
         className={`ph4 ph5-ns ph0-l mb4 mb5-ns w-100 overflow-hidden pointer attraction ${className}`}
-        onClick={this.toggleInfo}
+        onMouseEnter={this.toggleInfo}
         onMouseLeave={this.closeInfo}
       >
         <div className="relative">
