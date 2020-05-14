@@ -30,14 +30,14 @@ const NavItem = ({ className, href, children, logo }) => (
 const Nav = () => (
   <nav className="pt3 pt4-ns mb4 mbo-ns">
     <ul className="list flex flex-wrap flex-nowrap-ns justify-between items-center pa0 ma0">
-      {menu.map(item => (
+      {menu.map((item) => (
         <NavItem {...item} />
       ))}
     </ul>
   </nav>
 );
 
-const Overlay = ({ showInfo, title, description, link }) => {
+const Overlay = ({ showInfo, title, description }) => {
   return (
     <div
       className="absolute w-100 h-100 flex items-center pa3 pa4-ns bg-aqua overlay"
@@ -47,7 +47,6 @@ const Overlay = ({ showInfo, title, description, link }) => {
         <h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">
           {title}
           <br></br>
-          {link}
         </h1>
         <p className="lh-title lh-copy-ns mv0 black f6 measure-l">
           {description}
@@ -67,12 +66,12 @@ class Attractions extends React.Component {
 
   toggleInfo() {
     this.setState((prevState, props) => ({
-      showInfo: !prevState.showInfo
+      showInfo: !prevState.showInfo,
     }));
   }
   closeInfo() {
     this.setState({
-      showInfo: false
+      showInfo: false,
     });
   }
   render() {
@@ -95,13 +94,13 @@ class Attractions extends React.Component {
 
 const App = () => (
   <div>
-    <div className="min-vh-100 ph4 flex flex-column">
+    <div className=" min-vh-100 ph4 flex flex-column">
       <Nav />
       <Intro />
     </div>
 
     <div className="flex flex-wrap container">
-      {attractions.map(attraction => (
+      {attractions.map((attraction) => (
         <Attractions {...attraction} />
       ))}
     </div>
